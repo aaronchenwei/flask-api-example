@@ -4,7 +4,7 @@ This example project provides a minimal configuration for a 'production-ready' F
 
 The example has been set up for use with Python >= 3.7 and [Docker](https://www.docker.com/). 
 
-## Running locally
+## 1.1. Running locally
 
 To run the basic server, you'll need to install a few requirements. To do this, run:
 
@@ -19,11 +19,7 @@ default server, you can run:
 $ bash bin/run.sh
 ```
 
-This will start a [Gunicorn](https://gunicorn.org/) server that wraps the Flask app 
-defined in `src/app.py`. Note that [this is one of the recommended ways of deploying a
-Flask app 'in production'](https://flask.palletsprojects.com/en/1.1.x/deploying/wsgi-standalone/). 
-The server shipped with Flask is [intended for development
-purposes only](https://flask.palletsprojects.com/en/1.1.x/deploying/#deployment).  
+This will start a [Gunicorn](https://gunicorn.org/) server that wraps the Flask app defined in `src/app.py`. Note that [this is one of the recommended ways of deploying a Flask app 'in production'](https://flask.palletsprojects.com/en/2.0.x/deploying/wsgi-standalone/). The server shipped with Flask is [intended for development purposes only](https://flask.palletsprojects.com/en/2.0.x/deploying/).  
 
 You should now be able to send:
 
@@ -33,11 +29,9 @@ $ curl localhost:5000/health
 
 And receive the response `OK` and status code `200`. 
 
-## Running with `docker`
+## 1.2. Running with `docker`
 
-Unsurprisingly, you'll need [Docker](https://www.docker.com/products/docker-desktop) 
-installed to run this project with Docker. To build a containerised version of the API, 
-run:
+Unsurprisingly, you'll need Docker installed to run this project with Docker. To build a containerised version of the API, run:
 
 ```bash
 $ docker build . -t flask-app
@@ -51,7 +45,7 @@ $ docker run -p 5000:5000 flask-app
 
 You should see your server boot up, and should be accessible as before.
 
-## Developing with the template
+## 1.3. Developing with the template
 
 To develop with this example project, install the project's development dependencies. You can do this with:
 
@@ -60,3 +54,9 @@ pip install -r requirements/develop.txt
 ```
 
 This'll install some style formatting and testing tools (including `pytest` and `locust`).
+
+* [black](https://github.com/psf/black) - the uncompromising Python code formatter.
+* [isort](https://github.com/PyCQA/isort) - a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type. 
+* [flake8](https://github.com/PyCQA/flake8) - a python tool that glues together pycodestyle, pyflakes, mccabe, and third-party plugins to check the style and quality of some python code.
+* [pytest](https://github.com/pytest-dev/pytest) - The pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+* [locust](https://github.com/locustio/locust) - Scalable user load testing tool written in Python
