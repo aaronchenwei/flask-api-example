@@ -11,6 +11,15 @@ The example has been set up for use with Python >= 3.7 and [Docker](https://www.
 
 ## 1.2. Running locally
 
+`venv` is prefered to run the development locally.
+
+```bash
+$ python -m venv venv/flask
+$ source ./venv/flask/bin/activate
+```
+
+Optional, just type `deactivate` to quit virtual environment.
+
 To run the basic server, you'll need to install a few requirements. To do this, run:
 
 ```bash
