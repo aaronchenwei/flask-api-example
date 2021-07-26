@@ -1,10 +1,15 @@
 # flask-api-example
 
-This example project provides a minimal configuration for a 'production-ready' Flask API project. It includes a basic project structure and 'seed' files for functional and non-function testing, a basic application structure (including error-handling blueprint), and a few assorted 'getting started' files too.
+This example project provides a minimal configuration for a `production-ready` Flask API project. It includes a basic project structure and `seed` files for functional and non-function testing, a basic application structure (including error-handling blueprint), and a few assorted `getting started` files too.
 
 The example has been set up for use with Python >= 3.7 and [Docker](https://www.docker.com/). 
 
-## 1.1. Running locally
+## 1.1. Dependencies
+
+* [flask](https://github.com/pallets/flask) v2.x
+* [gunicorn](https://github.com/benoitc/gunicorn)
+
+## 1.2. Running locally
 
 To run the basic server, you'll need to install a few requirements. To do this, run:
 
@@ -24,12 +29,12 @@ This will start a [Gunicorn](https://gunicorn.org/) server that wraps the Flask 
 You should now be able to send:
 
 ```bash
-$ curl localhost:5000/health
+$ curl localhost:8080/health
 ```
 
 And receive the response `OK` and status code `200`. 
 
-## 1.2. Running with `docker`
+## 1.3. Running with `docker`
 
 Unsurprisingly, you'll need Docker installed to run this project with Docker. To build a containerised version of the API, run:
 
@@ -40,12 +45,12 @@ $ docker build . -t flask-app
 To launch the containerised app, run:
 
 ```bash
-$ docker run -p 5000:5000 flask-app
+$ docker run -p 8080:8080 flask-app
 ```
 
 You should see your server boot up, and should be accessible as before.
 
-## 1.3. Developing with the template
+## 1.4. Developing with the template
 
 To develop with this example project, install the project's development dependencies. You can do this with:
 
