@@ -1,17 +1,12 @@
-from flask import Flask, Response, jsonify, request
+from flask import Response, jsonify, request
+from . import api
 
-from .errors import errors
-
-app = Flask(__name__)
-app.register_blueprint(errors)
-
-
-@app.route("/")
+@api.route("/")
 def index():
     return Response("Hello, world!", status=200)
 
 
-@app.route("/custom", methods=["POST"])
+@api.route("/custom", methods=["POST"])
 def custom():
     payload = request.get_json()
 
@@ -21,8 +16,3 @@ def custom():
         output = jsonify({"message": "..."})
 
     return output
-
-
-@app.route("/health")
-def health():
-    return Response("OK", status=200)
