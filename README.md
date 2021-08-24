@@ -11,19 +11,12 @@ The example has been set up for use with Python >= 3.7 and [Docker](https://www.
 
 ## 1.2. Running locally
 
-`venv` is prefered to run the development locally.
-
-```bash
-$ python -m venv venv/flask
-$ source ./venv/flask/bin/activate
-```
-
-Optional, just type `deactivate` to quit virtual environment.
+[`pipenv`](https://pipenv.pypa.io/en/latest/) is prefered to run the development locally.
 
 To run the basic server, you'll need to install a few requirements. To do this, run:
 
 ```bash
-$ pip install -r requirements/common.txt
+$ pipenv install -r requirements/common.txt
 ```
 
 This will install only the dependencies required to run the server. To boot up the 
